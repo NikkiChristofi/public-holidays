@@ -1,5 +1,5 @@
 
-# public-holidays
+# holidays-public
 
 Gets public holidays within specified timeframes
 
@@ -9,20 +9,20 @@ Gets public holidays within specified timeframes
 
 1. install package
 
-       npm install public-holidays
+       npm install holidays-public
 
 	or
 
-       yarn add public-holidays
+       yarn add holidays-public
 
 
 2. require in code
 
-       import getPublicHolidays from 'public-holidays'
+       import getPublicHolidays from 'holidays-public'
 
 	or
 
-	   const { getPublicHolidays } = require('public-holidays)
+	   const { getPublicHolidays } = require('holidays-public)
 
   
 

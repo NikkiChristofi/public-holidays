@@ -1,5 +1,5 @@
 {
-  "name": "public-holidays",
+  "name": "holidays-public",
   "version": "0.0.0",
   "description": "gets public holidays within a specified timeframe",
   "main": "lib/index.js",
