@@ -1,0 +1,38 @@
+{
+  "name": "public-holidays",
+  "version": "0.0.0",
+  "description": "gets public holidays within a specified timeframe",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepare": "node_modules/@babel/cli/bin/babel.js src --out-dir lib",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
+    "lint": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikkiChristofi/public-holidays.git"
+  },
+  "author": "Nikki Christofi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com//NikkiChristofi/public-holidays/issues"
+  },
+  "homepage": "https://github.com/NikkiChristofi/public-holidays#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "jest": "^24.5.0",
+    "standard": "^12.0.1"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}
