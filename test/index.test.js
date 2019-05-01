@@ -36,6 +36,63 @@ describe('valid requests for public holidays', () => {
     expect(result.length).toEqual(1)
     expect(result[0]).toEqual(scottishAugustHolidays)
   })
+
+  it('returns all dates within a date range provided, regardles of whether they are in the past', () => {
+    const yearHolidays = [
+      {
+        'title': 'New Year’s Day',
+        'date': moment('2019-01-01', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      },
+      {
+        'title': 'Good Friday',
+        'date': moment('2019-04-19', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': false
+      },
+      {
+        'title': 'Easter Monday',
+        'date': moment('2019-04-22', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      },
+      {
+        'title': 'Early May bank holiday',
+        'date': moment('2019-05-06', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      },
+      {
+        'title': 'Spring bank holiday',
+        'date': moment('2019-05-27', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      },
+      {
+        'title': 'Summer bank holiday',
+        'date': moment('2019-08-26', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      },
+      {
+        'title': 'Christmas Day',
+        'date': moment('2019-12-25', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      },
+      {
+        'title': 'Boxing Day',
+        'date': moment('2019-12-26', 'YYYY-MM-DD'),
+        'notes': '',
+        'bunting': true
+      }
+    ]
+
+    const result = getPublicHolidays({ start: '2019-01-01', end: '2019-12-31' })
+    expect(result.length).toEqual(8)
+    expect(result).toEqual(yearHolidays)
+  })
 })
 
 describe('invalid requests for public holidays', () => {
