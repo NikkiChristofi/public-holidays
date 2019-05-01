@@ -17,17 +17,18 @@ export function getPublicHolidays (dateRange = null, region = 'england-and-wales
 
   const sortedHolidayArray = BankHolidays[region].events
     .map(holiday => convertToDate(holiday))
-    .filter(holiday => holiday.date.isAfter(today))
     .sort(compareDates)
 
   // if no date range is provided, send the next public holiday back
-  if (!dateRange) return [sortedHolidayArray.shift()]
+  if (!dateRange) {
+    return [sortedHolidayArray.filter(holiday => (holiday.date.isSame(today) || holiday.date.isAfter(today))).shift()]
+  }
 
   const { start, end } = dateRange
 
   if (!start || !end) return []
 
-  return sortedHolidayArray.filter(holiday => holiday.date.isBetween(start, end))
+  return sortedHolidayArray.filter(holiday => holiday.date.isBetween(start, end, null, '[]'))
 }
 
 function convertToDate (holiday) {
